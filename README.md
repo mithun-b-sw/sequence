@@ -17,8 +17,26 @@ The abstract nature of the datatype used will hide the internal details is shown
 Handy example of test cases with use of malloc() and free().
 These examples ensure memory leak proof code using CppUTest memory leak detection feature.  
 
+### How can I use "setup_CppUTest" for a new project?
+
+1. create a folder in a local with your project name
+2. open terminal, cd to your project folder ( this uses the optional directory argument for "git clone")
+    $ git clone https://github.com/mithun-b-sw/setup_CppUTest.git .
+3. make necessary changes, add to staging
+    $ git add -A
+4. commit
+    $ git commit
+5. this completes setting up new repository, if this need to uploaded to a different repository continue with the following steps.
+6. first check "origin" name is already taken
+    $ git remote -v
+7. if so, then use a different name in following command in place of "origin"
+    $ git remote add origin https://github.com/mithun-b-sw/sequence.git
+8. push to "origin" only if the origin is newy cleated at 'step 7' else use same name used at 'step 7' in place of "origin"
+    $ git push -u origin master
+
 #### TODO:
 The "lib" folder contains libCppUTest.a libCppUTestExt.a compiled one Ubuntu 15.04  
 Compatiblity problem can be there with other Linux distribution, 
 which you can fix by compiling these static libaries on your native system.  
+
 

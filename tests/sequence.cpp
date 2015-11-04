@@ -7,7 +7,7 @@ extern "C"
 
 TEST_GROUP(SEQUENCE)
 {
-	sequence A = NULL;
+	sequence A;
 
 	void setup()
 	{
