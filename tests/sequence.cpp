@@ -11,7 +11,10 @@ TEST_GROUP(SEQUENCE)
 
 	void setup()
 	{
-		// "1, 16, 1" means: range from 1 to 16 with difference of 1 unit..
+		/**
+		 * The arguments "1, 16, 1" means: 1 to 16 with difference of 1
+		 * i.e, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}
+		 */
 		A = sequence_create(1, 16, 1);
 		CHECK(NULL != A);
 	}

@@ -18,18 +18,18 @@ sequence sequence_create(int start, int end, int diff)
 {
 	sequence self;
 
-	/* TODO add: cases for (start < end and diff +ve) along with 
-	 * (start > end and diff -ve) condition and test cases.
-	 * Currently only positive growing sequences are present.
-	 */
-	if ((start < end) && (diff > 0))
+	if ( ((start < end) && (diff > 0)) || ((start > end) && (diff < 0)) )
 	{
 		self = malloc(sizeof(sequence_struct));
+		if (NULL == self)
+		{
+			return NULL;
+		}
 		self->start = start;
 		self->end = end;
 		self->diff = diff;
 	}
-	else  /* TODO: test cases with check return value NULL */
+	else
 	{
 		return NULL;
 	}
@@ -49,7 +49,16 @@ unsigned int get_sequence_length(sequence self)
 void get_sequence_as_array(sequence self, int res[])
 {
 	int i;
-	/* TODO check valid object? "self" */
+
+	if (NULL == self)
+	{
+		return;
+	}
+	if (NULL == res)
+	{
+		return;
+	}
+
 	unsigned int count = COUNT( self->start, self->end, self->diff );
 	for(i = 0; i < count; i++)
 	{
