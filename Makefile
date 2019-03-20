@@ -1,27 +1,23 @@
-#------------------
-# CppUTest run test
-#------------------
+.PHONY : test clean distclean
 
-ifndef SILENCE
-	#Set this to @ to keep the makefile quiet
-	SILENCE = @
-endif
+test : deps/cpputest/lib/libCppUTest.a
+	cd ./test ; make test
 
-#--- Inputs ----#
-COMPONENT_NAME = mycomponent
-CPPUTEST_HOME = .
+deps/cpputest/lib/libCppUTest.a : deps/cpputest/configure
+	cd ./deps/cpputest && ./configure && make
 
-CPPUTEST_USE_EXTENSIONS = Y
-CPP_PLATFORM = Gcc
+deps/cpputest/configure : deps/cpputest/autogen.sh
+	cd ./deps/cpputest && ./autogen.sh
 
-SRC_DIRS = src
+# fix this by making use of git submodule
+deps/cpputest/autogen.sh :
+	cd ./deps && git clone git://github.com/cpputest/cpputest.git cpputest
 
-TEST_SRC_DIRS = tests
+clean :
+	cd ./test ; make clean
 
-INCLUDE_DIRS = \
-	$(CPPUTEST_HOME)/include
+distclean :
+	cd ./deps/cpputest ; make distclean
+	make clean
 
-CPPUTEST_WARNINGFLAGS = -Wall -Wswitch-default -Werror 
-CPPUTEST_CFLAGS = -std=c89
-
-include $(CPPUTEST_HOME)/MakefileWorker.mk
+# TODO: add targets to perform code coverage using gcov

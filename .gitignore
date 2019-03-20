@@ -1,0 +1,11 @@
+# ignore everything in deps folder
+deps/
+
+# ignore everything in test/lib and test/objs folder
+test/lib/
+test/objs/
+
+# ignore compilation related files
+*.d
+*.o
+*.a
