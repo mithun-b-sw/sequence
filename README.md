@@ -34,11 +34,6 @@ These examples ensure memory leak proof code using CppUTest memory leak detectio
 8. push to "origin" only if the origin is newy cleated at 'step 7' else use same name used at 'step 7' in place of "origin"  
     $ git push -u origin master
 
-#### TODO:
-The "lib" folder contains libCppUTest.a libCppUTestExt.a compiled one Ubuntu 15.04  
-Compatiblity problem can be there with other Linux distribution, 
-which you can fix by compiling these static libaries on your native system.  
-
 
 Known compilation errors:  
 1. In case you are using latest gnu c++ compiler, you may encounter error (warning, actually) as:  
