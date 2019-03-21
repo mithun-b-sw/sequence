@@ -10,8 +10,11 @@ deps/cpputest/configure : deps/cpputest/autogen.sh
 	cd ./deps/cpputest && ./autogen.sh
 
 # fix this by making use of git submodule
-deps/cpputest/autogen.sh :
+deps/cpputest/autogen.sh : deps
 	cd ./deps && git clone git://github.com/cpputest/cpputest.git cpputest
+
+deps:
+	mkdir -p deps
 
 clean :
 	cd ./test ; make clean

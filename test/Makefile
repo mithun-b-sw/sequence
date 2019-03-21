@@ -8,7 +8,7 @@ ifndef SILENCE
 endif
 
 #--- Inputs ----#
-COMPONENT_NAME = mycomponent
+COMPONENT_NAME = sequence
 CPPUTEST_HOME = ../deps/cpputest
 
 CPPUTEST_USE_EXTENSIONS = Y
