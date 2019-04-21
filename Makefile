@@ -13,7 +13,7 @@ deps/cpputest/configure : deps/cpputest/autogen.sh
 deps/cpputest/autogen.sh : deps
 	cd ./deps && git clone git://github.com/cpputest/cpputest.git cpputest
 
-deps:
+deps :
 	mkdir -p deps
 
 clean :
