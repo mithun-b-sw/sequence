@@ -9,3 +9,7 @@ test/objs/
 *.d
 *.o
 *.a
+
+# project specific named files
+test/mycomponent_tests
+test/mycomponent_tests.txt
