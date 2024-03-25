@@ -9,7 +9,3 @@ test/objs/
 *.d
 *.o
 *.a
-
-# project specific named files
-test/sequence_tests
-test/sequence_tests.txt
