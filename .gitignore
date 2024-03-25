@@ -9,3 +9,10 @@ test/objs/
 *.d
 *.o
 *.a
+
+# ignore local hidden files, like vim specific .filename.swp file.
+.*
+
+# project specific named files
+test/mycomponent_tests
+test/mycomponent_tests.txt
