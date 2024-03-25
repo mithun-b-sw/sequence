@@ -14,5 +14,5 @@ test/objs/
 .*
 
 # project specific named files
-test/mycomponent_tests
-test/mycomponent_tests.txt
+test/*_tests
+test/*_tests.txt
